@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content  %}
+Информация про залы
+ {% for location in locations %}
+        <h1>
+            <a href="{% url 'loc_get' location_id=location.location_id %}">
+                {{ location.location_name }}
+            </a>
+    {% endfor %}
+{% endblock %}

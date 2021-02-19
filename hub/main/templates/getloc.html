@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content  %}
+Информация про зал
+  <div>
+        <p>
+            Имя зала: {{ location.location_name }}.
+            Информация про зал : {{ location.location_present }}
+            {% if user.is_authenticated %}
+            {%endif%}
+                 <br><a href="{% url 'loc_edit' location_id=location.location_id %}">
+                    <button type="submit" class="btn btn-outline-primary">Редактировать</button>
+                </a>
+                 </br>
+
+
+        </p>
+    </div>
+{% endblock %}
