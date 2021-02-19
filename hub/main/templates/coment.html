@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content  %}
+Коментарии
+ {% for coment in coments %}
+<li>
+    Зал : {{coment.location.all.location_name}}  <p>{{coment.comentary}}</p> <p>Имя отправителя:{{coment.name}}</p>
+    <p>{{coment.created}}</p>
+</li>
+
+    {% endfor %}
+
+<br><a href="{% url 'add_coment' %}">
+                    <button type="submit" class="btn btn-outline-primary">Добавить коментарий</button>
+                </a>
+{% endblock %}
